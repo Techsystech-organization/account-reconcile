@@ -53,6 +53,11 @@
                 <field name="account_root_id" />
                 <field name="account_type" />
                 <field name="partner_id" domain="[('parent_id', '=', False)]" />
+                <filter
+                    name="amount_residual_match"
+                    string="Amount"
+                    domain="[('amount_residual', '=', context.get('statement_line_amount'))]"
+                />
                 <field name="journal_id" />
                 <field
                     name="move_id"
